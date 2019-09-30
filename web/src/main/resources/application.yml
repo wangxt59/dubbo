@@ -1,0 +1,52 @@
+#服务
+server:
+  port: 80
+  servlet:
+    context-path: /web
+#    context-path: /
+
+# 日志配置   默认配置ERROR、WARN和INFO级别的日志输出到控制台。
+debug: true
+# 日志配置
+logging:
+#  file: log/AhutOne.log
+#  path: /web/target/log
+  level:
+    # com.ahut包下所有class以DEBUG级别输出
+    com.wang: DEBUG
+    # root日志以WARN级别输出
+    root: WARN
+  config: classpath:logback-spring.xml
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # mybatis配置文件
+    config-location: classpath:/conf/mybatis-config.xml
+  # 映射文件所在路径com.wang.mapperweb/
+  mapper-locations: classpath:/mapper/*
+  # 前面的 - 不要删除
+
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+
+
+#spring:
+#  resources:
+#    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+
+people:
+  name: wang
+  password: 123
+
+spring:
+  http:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true

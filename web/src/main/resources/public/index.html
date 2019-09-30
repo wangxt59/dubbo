@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <form action="" method="post" accept-charset="UTF-8">
+        <div>
+            <c:forEach items="${map.categoryList}" var="c">
+                <option value="${c.category_id}" ${map.parent_id == c.category_id?'selected':''}>
+                <c:out value="${c.category_name}"/>
+                </option>
+            </c:forEach>
+        </div>
+    </form>
+</body>
+</html>
